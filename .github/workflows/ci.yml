@@ -29,11 +29,6 @@ jobs:
       - name: Run fmt
         run: test -z $(go fmt ./...)
 
-      - name: Install Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '1.22'
-
       - name: Add $HOME/go/bin ao PATH
         run: echo "$HOME/go/bin" >> $GITHUB_PATH
 
