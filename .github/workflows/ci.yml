@@ -26,8 +26,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23.0"
+
       - name: Run fmt
-        run: test -z $(go fmt ./...)
+        run: test -z "$(go fmt ./...)"
 
       - name: Add $HOME/go/bin ao PATH
         run: echo "$HOME/go/bin" >> $GITHUB_PATH
@@ -37,5 +45,4 @@ jobs:
 
       - name: Run linter
         run: staticcheck ./...
-
 
