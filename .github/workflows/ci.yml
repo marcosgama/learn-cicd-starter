@@ -33,5 +33,5 @@ jobs:
         run: go install honnef.co/go/tools/cmd/staticcheck@latest
 
       - name: Run linter
-        run: test -z $(staticcheck ./...)
+        run: staticcheck ./...
 
