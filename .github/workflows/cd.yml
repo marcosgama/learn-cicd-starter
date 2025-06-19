@@ -18,6 +18,9 @@ jobs:
         with:
           go-version: "1.23.0"
 
+      - name: Build production binary
+        run: ./scripts/buildprod.sh
+
       - id: 'auth'
         uses: 'google-github-actions/auth@v2'
         with:
